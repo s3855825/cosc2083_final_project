@@ -1,21 +1,19 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
-<form method="post">
+<form action="" method="post">
 
-  <div class="container">
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+  {{ form.hidden_tag() }}
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+  <p>
+    {{ form.student_id.label }} <br>
+    {{ form.student_id }}
+  </p>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+  <p>
+    {{ form.password_hash.label }} <br>
+    {{ form.password_hash }}
+  </p>
+  
+  <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
+  <p> {{ form.submit() }} </p>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
 </form>

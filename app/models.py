@@ -4,7 +4,7 @@ from flask_login import UserMixin
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.types import Enum
 from app.database import base
-from app import login
+from app import login_manager
 
 import enum
 
@@ -14,9 +14,9 @@ class RoleEnum(enum.Enum):
     leader = 'leader'
 
 
-@login.user_loader
+@login_manager.user_loader
 def load_student(student_id):
-    return Students.query.get(int(student_id))
+    return Students.get(int(student_id))
 
 
 class Students(UserMixin, base):
