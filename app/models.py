@@ -22,9 +22,15 @@ def load_student(student_id):
 class Students(UserMixin, base):
     __tablename__ = "Students"
     student_id = Column(String(7), primary_key=True, nullable=False, unique=True)
+    email = Column(String(20), nullable=False, unique=True)
     student_name = Column(String(20), nullable=False)
     password_hash = Column(String, nullable=False)
     credit_score = Column(Float)
+
+    def __init__(self, student_id, student_name, email):
+        self.student_id = student_id
+        self.student_name = student_name
+        self.email = email
 
     def __repr__(self):
         return '<Student {}, {}>'.format(self.student_id, self.student_name)

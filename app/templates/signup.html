@@ -1,16 +1,53 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}" />
 <form action method="post" style="border:1px solid #ccc">
-  <div class="container">
+
     <h1>Sign Up</h1>
     <hr>
 
+    <p>
+      {{ form.student_id.label }} <br>
+      {{ form.student_id }}
 
+      {% for error in form.student_id.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
 
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <p>
+      {{ form.student_name.label }} <br>
+      {{ form.student_name }}
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-  </div>
+      {% for error in form.student_name.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.email.label }}
+      {{ form.email }}
+
+      {% for error in form.email.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.password.label }} <br>
+      {{ form.password }}
+
+      {% for error in form.password.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.password_confirm.label }} <br>
+      {{ form.password_confirm }}
+
+      {% for error in form.password_confirm.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p> {{ form.submit() }} </p>
 </form>
