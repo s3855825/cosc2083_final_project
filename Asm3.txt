@@ -1,0 +1,27 @@
+Overview
+Topic
+
+GROUP 1’s project is a website for our student community which named RMIT student network (RSN). Instead of struggling to find teammates for assignments in online or offline, RSN will be a new area for student. The same with other social networks, such as Facebook or Instagram, users can post and share things in newsfeed. Although users now are RMIT students and things are requests, not pictures and status. Moreover, the website is not only helping finding partners but also the most suitable one. Each student has their own personal information which include credit point, biography and feedback from previous team. When a student approach a post of other student, they will see all of information so that student can decide teams or person most appropriate to work with. 
+
+RSN will be controlled be RMIT so that the transparency can be maintained. Lectures who are responsible for the class will have right to see the process of group in order to keep nothing wrong happen. Overall, RMIT student network is a credible workplace for students, parasites and lazy people need to try harder to gain others trust if they do not want to be excluded from the class. With our group, we are trying to make a prototype and hope that our project can catch RMIT’s interest. If RSN make it to be operated, it will be a memorable memory and a big milestone for us. If not, it can still be beneficial to our CV.
+
+Motivation   
+Four people of us has come up with many ideas since week 1. However, most of projects are unrealistic or unable to make at the moment. Therefore, we thought about some problems are existing at RMIT and one of them is the forming team for assignment. 
+
+Firstly, most of students, especially students from School of Business and Management, they have a lot of coursework that require working as a group. It is a huge challenge for everyone to find suitable teammates. When using Facebook to find partners in RMIT group, it takes times to search for the related contain because it has diversity of topic. For example, accommodation and finding roommates. Moreover, not everyone uses Facebook so for people in this group is a disadvantage to them. 
+
+Secondly, there are some risks when forming a group at the first time of a semester. Students cannot know what type or how well the collaborator is. There are many situations have been happened, such as teammates does not work effectively like they said at the beginning or the effort they spend is not equal to the group’s goals. Plus, some students are really late in forming a team or find difficult in talking with people. They will fall behind and might be insufficient time to work on the project. 
+
+In addition, this project is trying to support RMIT students in coursework and creating a professional online workplace. It solves the problems of forming team and encouraging students to work hard and be responsible with their decision. For our career, this project will be a proof for our achievement, vision and experience to future employers.
+
+Landscape   
+Our biggest competitor is Facebook. At the moment, RMIT Vietnam society group have nearly 6000 members.
+ 
+
+We can see that there is big community with a lot of posts about different subjects. Thus, finding the post we want is like looking for a needle in a haystack. Moreover, students might miss the post that they need. Another problem is we cannot know who we will cooperate with. Most of students find that they conflict with their teammates while they are doing the assignment. That means they cannot move to another group during the assessment due to the deadline for the formation and registration of the team. 
+
+RSN can overcome those problems by its functions. At the beginning of the semester, previous post from corresponding subject will be deleted by lectures so that we can make sure that everything in newsfeed are related to current semester. Moreover, RSN will separate each Schools of RMIT to different sections. Before viewing posts, students need to choose the School they are studying. Lastly, not like Facebook, students can look at others information which contain a brief about themselves, previous activities, credit point and feedback. The value of credit point and feedbacks are evaluated by last teammates. These segments will be a tool for students to find ideal collaborators. RSN also have the group chat section, where is a workplace for all members. They can set up deadline, upload files and conversation. 
+
+Aims
+Our target is developing a website that 
+
