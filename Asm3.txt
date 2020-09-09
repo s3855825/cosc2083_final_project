@@ -18,10 +18,15 @@ Landscape
 Our biggest competitor is Facebook. At the moment, RMIT Vietnam society group have nearly 6000 members.
  
 
-We can see that there is big community with a lot of posts about different subjects. Thus, finding the post we want is like looking for a needle in a haystack. Moreover, students might miss the post that they need. Another problem is we cannot know who we will cooperate with. Most of students find that they conflict with their teammates while they are doing the assignment. That means they cannot move to another group during the assessment due to the deadline for the formation and registration of the team. 
+We can see that there is a big community with a lot of posts about different subjects. Thus, finding the post we want is like looking for a needle in a haystack. Moreover, students might miss the post that they need. Another problem is we cannot know who we will cooperate with. Most of students find that they conflict with their teammates while they are doing the assignment. That means they cannot move to another group during the assessment due to the deadline for the formation and registration of the team. 
 
 RSN can overcome those problems by its functions. At the beginning of the semester, previous post from corresponding subject will be deleted by lectures so that we can make sure that everything in newsfeed are related to current semester. Moreover, RSN will separate each Schools of RMIT to different sections. Before viewing posts, students need to choose the School they are studying. Lastly, not like Facebook, students can look at others information which contain a brief about themselves, previous activities, credit point and feedback. The value of credit point and feedbacks are evaluated by last teammates. These segments will be a tool for students to find ideal collaborators. RSN also have the group chat section, where is a workplace for all members. They can set up deadline, upload files and conversation. 
 
 Aims
-Our target is developing a website that 
+Our target is developing a website that RMIT students can use to form group and work on assignments. As discussed above, we want to create an equitable and effective virtual environment. To achieve that purpose, we need to fulfil some specific goals. The first goal is having a prototype for demo pitch in presentation day. Next, try to gain attention from RMIT community. Finally, working on the completed website before operate it. 
+
+Firstly, we have planned RSN since week 2 of the course. However, until week 9, we can start to make it because previous deadlines. Although our group is first year students, we are confident that we have enough experience to make a prototype. Recently, we are reading and searching for HTML resources by books and website like W3schools. Our base codes will not have professional CSS to display our website because we do not have enough time to focus on that part. The final result for first goal is having a web can steadily perform its main functions so that we can show it in presentation. 
+
+Secondly, RSN must be approved by RMIT community which not only the teachers but also students. The presentation will be the first opportunity to introduce our project and amaze our lectures. RMIT staffs always encourages and supports students’ ideas so we can feel more self-assured to them even our product has not been perfect yet. If our project is applied, lectures will be the administrator of the website, the same with canvas. Because of that, they need to understand and agree to use RSN.
+
 
