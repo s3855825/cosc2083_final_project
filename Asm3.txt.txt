@@ -1,0 +1,43 @@
+Personal Information
+•	Tran Minh Duc (s3855825):
+He was born in Hanoi. He is more likely a patient and calm person based on his look. He does not talk a lot. He is, however, still friendly and approachable. It’s just because he usually prefers to be alone to focus easily on his work. Duc found his interest in IT ever since he was in secondary school. Specifically, during the first time he was introduced to Pascal, he began to like it. However, it was not until he was in the second year of his high school that he began to learn programming. His first project was a Tic-tac-toe game that competed with AI, but he didn’t know how to make the GUI at that time so he still has a long way to go, since study is a whole life journey.
+•	Nguyen Vinh Quang (s3817788):
+He was born on 23th June, 2000 in Ho Chi Minh city, Vietnam. He is also at times called Edward, or simply just Ed. Quang is keen on playing sports, reading science books, and playing games with his friends during his past-time. Ever since he was in secondary school, he has read research relating to science. However, it was after he finished his presentation about ASIMO robots that sparked his interest in the IT field, to be more specific, it was about AI (Artificial Intelligence). Still, at the moment, he has a long way to go and there are many things he has to learn before realizing his true path.
+•	Ngo Nhat Minh (s3838104):
+Minh was born on 21st September, 2001 in Ho Chi Minh city, Vietnam. Sometimes he is misclaimed as an Indian due to his look, however, he is 100% Vietnamese. Minh is keen on playing video games and sports, hanging out with his friends and chit-chatting. The most interesting thing about him is he’s the only one vegan in the team, but, he is also the biggest and tallest in the team. He found his interest in IT when he was in the first grade of high school. 
+•	Nguyen Hung Vinh (s3778972):
+He was born on 3rd August, 1999 in Can Tho city, Vietnam. He’s also called Arno once in a while, but still, mostly is Vinh. He’s the eldest and also the most introverted guy of the team. Playing games, especially MOBA games and reading books are his favorite hobbies. Due to being an introverted person so he’s usually shy to make new friends, even though he loves it. The first time that he found his interest in IT was when he was in high school. During that time, he has already done some small research about IT fields and was totally struck by them. Later on, he has also realized that he had the ability to do problem solving and get on well with algorithms, and ever since then, he made up his mind to choose to be a Back-End developer.
+
+Team Profile
+Minh Duc:
+•	Test 1 – Learning Style Test:
+Based on this test, Duc is a visual learner, which means he tends to remember things by reading and/or seeing the pictures. He has the ability to imagine and brings everything that he’s learning into his visual picture in his mind. In addition, he also doesn’t like to study in a crowded or noisy place, where he can be distracted easily by the background noises.
+•	Test 2 – Myer Briggs Personality Test:
+He tends to be an introverted person who would always rather work behind the scene than taking the spotlight. Moreover, he considers himself as a “fixer”, which means he is able to handle problems related to his team’s work whenever it comes up. 
+•	Test 3 – Colour Personality Test:
+There’s nothing much to say about the result of this test since it’s similar to the Myer Briggs test above. As mentioned, Duc tends to work individually in order to push himself to work as best as he can. On the other hand, it recommends him for being patient and kind towards everyone, and luckily, he already got all of them.
+Vinh Quang:
+•	Test 1 – Myer Briggs Personality Test:
+According to this test and based on the team’s opinion, Quang truly is an extroverted, who has the ability to link his teammates together and form the bonds between them. He is the one and only perfectionist in this team because he wants everything he does to be nearly, or even perfect. However, fortunately, he is lazy every once in a while, and thereby, it somehow helps him to not push himself over his limit. 
+•	Test 2 – Learning Style Test:
+Quang and Duc share the same learning style, which means they both good at visualizing things that they have learned and picturing them in their head. Quang also is easily got distracted by noise. In contrast, he loves to work in pairs or groups because he wants to get to know others’ point of view and willing to help each other.
+ Nhat Minh:
+·   	Test 1 – Myer Briggs Personality Test:
+Based on the results, Minh somehow is an extroverted, which is totally adverse to his expectation that he is an introverted due to his disapproval in social interactions. He is more likely a logistic type rather than the emotional one.
+·       Test 2 – Learning Style Test:
+Minh’s learning style mostly is auditory, which means he can learn effectively by hearing. His ideal study environment is classroom, where he can have the ability to comprehend, analyses the lecture and retain the information.
+Hung Vinh:
+·   	Myer Briggs Personality Test:
+The test results reflect nearly 90% accuracy about his character that he’s more likely an introverted, but also sometimes he could be an extroverted because still loves to make friends and widen his social relationship. He focuses on the team’s or social’s harmony, balancing the connection between the participants rather than competing. Even though he is not creative most of the time, he still can be able to support the team’s idea and at times giving the contrast idea in order to make it more reasonable.
+Group Processes
+•	In terms of Assignment 2, in general, we did our best so we are pretty confident about each aspect of the assignment even though we are usually on the go with our other courses. By communicating each other frequently and providing supports and contrast ideas towards the members, the bond between the members are strengthen day by day since our working time are always surrounded by hilarious atmosphere. We all hope that our hard work will pay off in the near future, when the results is released.
+
+•	About the upcoming Assignment 3, so far we have already separated works for the team members and things mostly seem to be on track. Despite our workload is much heavier compared to the previous assignments and at times there are some obstacles, we are always ready and happy to support each other to find ways so as to solve them. We do believe that if we work hard enough, the prototype of our project will be done sone before meeting its deadline.
+
+Career Plans
+•	Tran Minh Duc: Chooses Solution Architect as his future career
+•	Nguyen Vinh Quang: He chooses the same path as Duc, Solution Architect for his future career
+•	Ngo Nhat Minh: He chooses to be a Java Developer for career in the future
+•	Nguyen Hung Vinh: He chooses to be a Data Engineer as his career in the future
+In general, 
+
