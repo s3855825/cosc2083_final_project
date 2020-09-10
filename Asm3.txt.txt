@@ -39,5 +39,10 @@ Career Plans
 •	Nguyen Vinh Quang: He chooses the same path as Duc, Solution Architect for his future career
 •	Ngo Nhat Minh: He chooses to be a Java Developer for career in the future
 •	Nguyen Hung Vinh: He chooses to be a Data Engineer as his career in the future
-In general, 
+a)	Similar elements:
+It can be clearly seen that there are some similar requirements we have to achieve in order to get a decent job. First of all, it is undeniable that bachelor degree is the most vital thing that we have to achieve for our future career. Such formal qualifications are proofs to show that we are fully equipped with in-depth knowledge to meet the job’s requirements. Moreover, essential-skills which relate to the job should also be sharpened while we are still in the university, alongside with some specific knowledge about other programming languages like Python, Java, C# and so on. 
+b)	Differences:
+Although there are some relating aspects, we still have our own different interests in the IT field so it is clear that our future path will be separated. To be more specific, there are some minor area in IT that one person may good at it, but others may don’t. Nevertheless, we do believe that each area has their own interest which we can learn something new and intriguing about them and therefore, it could facilitate our career in the future.
+Group Reflection
+
 
