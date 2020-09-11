@@ -1,5 +1,7 @@
-<h1>User: {{ user.username }}</h1>
+{% extends "base.html" %}
 
-<hr>
+{% block content% }
 
-{% endfor %}
+    <h1>User: {{ user.username }}</h1><hr>
+
+{% endblock %}

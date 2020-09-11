@@ -1,5 +1,5 @@
 from werkzeug.security import check_password_hash, generate_password_hash
-# from flask_login import UserMixin
+from flask_login import UserMixin
 
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.types import Enum
@@ -11,7 +11,7 @@ import enum
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'User': User, 'Post': Post}
+    return {'db': db, 'Student': Students}
 
 
 class RoleEnum(enum.Enum):
@@ -21,11 +21,11 @@ class RoleEnum(enum.Enum):
 
 @login_manager.user_loader
 def load_student(student_id):
-    return Students.get(int(student_id))
+    return Students.query.get(int(student_id))
 
 
 # class Students(UserMixin, base):
-class Students(db.Model):
+class Students(UserMixin, db.Model):
     __tablename__ = "Students"
     student_id = Column(String(7), primary_key=True, nullable=False, unique=True)
     email = Column(String(20), nullable=False, unique=True)
@@ -40,6 +40,9 @@ class Students(db.Model):
 
     def __repr__(self):
         return '<Student {}, {}>'.format(self.student_id, self.student_name)
+
+    def get_id(self):
+        return self.student_id
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)

@@ -1,21 +1,25 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
-<form action="" method="post">
+{% extends "base.html" %}
 
-  {{ form.hidden_tag() }}
+{% block content %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+  <form action="" method="post">
+    {{ form.csrf_token }}
+    {{ form.hidden_tag() }}
 
-  <p>
-    {{ form.student_id.label }} <br>
-    {{ form.student_id }}
-  </p>
+    <p>
+      {{ form.student_id.label }} <br>
+      {{ form.student_id }}
+    </p>
 
-  <p>
-    {{ form.password_hash.label }} <br>
-    {{ form.password_hash }}
-  </p>
-  
-  <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
-  <p> {{ form.submit() }} </p>
+    <p>
+      {{ form.password_hash.label }} <br>
+      {{ form.password_hash }}
+    </p>
 
-  <p> <a href=" {{ url_for('register') }} "> Register </a> </p>
+    <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
+    <p> {{ form.submit() }} </p>
 
-</form>
+    <p> <a href=" {{ url_for('register') }} "> Register </a> </p>
+
+  </form>
+{% endblock %}

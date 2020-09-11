@@ -10,8 +10,8 @@ from app.models import Students
 @app.route('/')
 @app.route('/index')
 @login_required
-def homepage():
-    return render_template('home.html', title="Home Page")
+def index():
+    return render_template('index.html', title="Home Page")
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -22,15 +22,16 @@ def register():
     register_form = RegisterForm()
 
     if register_form.validate_on_submit():
+        # print('form validated')
         student = Students(student_id=register_form.student_id.data,
                            student_name=register_form.student_name.data,
                            email=register_form.email.data)
         student.set_password(register_form.password.data)
         db.session.add(student)
         db.session.commit()
-        flash('Account Registered. Redirecting to login.')
-        # return redirect(url_for('login'))
-        return render_template('register_success.html', title='Account created')
+        flash('Account Registered. Redirecting to index.')
+        return redirect(url_for('index'))
+    # print('form not validated')
     return render_template('signup.html', title="Sign Up Page", form=register_form)
 
 
@@ -42,6 +43,7 @@ def login():
     login_form = LoginForm()
 
     if login_form.validate_on_submit():
+        print('form validated')
         student_id = Students.query.filter_by(student_id=login_form.student_id.data).first()
         # student_id = db.query(Students).filter_by(student_id=login_form.student_id.data).first()
         if student_id is None or not student_id.check_password(login_form.password_hash.data):
@@ -50,6 +52,7 @@ def login():
         login_user(student_id, remember=login_form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
+            print('not next page')
             next_page = url_for('index')
         return redirect(next_page)
     return render_template('login.html', title="Log In Page", form=login_form)
