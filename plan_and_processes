@@ -1,0 +1,22 @@
+PLAN AND PROCESSES
+
+- At the start of the planning stage, we decide to choose one out of four project ideas each member of our group proposed in assignment 1. While they are all good ideas, all of our group members agree we prefer a more 'realistic' project. We want to work on a project that can solve RMIT students' problems. So we scrapped our proposed ideas and focus on finding a problem we can solve and make a prototype for our solution. In the end, we arrive at our idea: a webapp to help students find partners for their group projects.
+
+- Users will need to have a RMIT email address to sign up for our 'service', so we can link their account to their RMIT account on Canvas so we can find out which courses that student took in the previous semesters and which grade they got. On this website, we want students to be able to do the following:
+	+ Write post: student can post on a dashboard to find partners for a group project, specifying what they need. Other students can apply for the position, specifying what they bring to the table, and the original poster can choose their group partner from a list of applicants.
+	+ Rate: at the end of the project, group members can rate each other based on their perfomance throughout that group project: were they actively contributing to the project, or did they just put in minimal effort required, ... and write a comment to justify their rating. Ratings and comments will be visible to everyone seeing the profile.
+	+ See others' profile: only the ratings, comments and course names will be available.
+
+- Since most of our group member are extremely inexperienced and unfamiliar with IT in general, specifically programming, we plan to make our prototype a simple website hosted on Heroku. While we want to make the prototype as simple as possible to suite our group's capabilities, we still have some difficulties due to our inexperience. It took us 2 weeks, week 9 and 10, to have a working basic user registration and logging model.
+
+
+
+
+
+ROLES
+
+- We decided early in the progress who will handle which part of the project. 
+	+ Duc: Since he is already familiar with programming and took the database course last semester, he will handle most of the website's functions: user registration and logging, interations, ... He also decide the technologies used in our project and handle our GitHub repository.
+	+ Quang: The idea for our final project is his, so he 'designed' our solutions: what are we trying to solve, how we approach the problem, and how the website would look like. He also support Duc on front-end issues.
+	+ Vinh: He writes our group profiles, scopes and limit part of the report. He also support Duc on front-end issues.
+	+ Minh: He volunteered to write most of the report, since writing is his strongest suite. He also support Duc on front-end issues.

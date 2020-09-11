@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+<form action="" method="post">
+
+  {{ form.hidden_tag() }}
+
+  <p>
+    {{ form.student_id.label }} <br>
+    {{ form.student_id }}
+  </p>
+
+  <p>
+    {{ form.password_hash.label }} <br>
+    {{ form.password_hash }}
+  </p>
+  
+  <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
+  <p> {{ form.submit() }} </p>
+
+  <p> <a href=" {{ url_for('register') }} "> Register </a> </p>
+
+</form>
