@@ -2,9 +2,9 @@ from flask import render_template, redirect, url_for, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
-from app.forms import LoginForm, RegisterForm
+from app.forms import LoginForm, RegisterForm, PostForm
 from app import app, db
-from app.models import Students
+from app.models import Students, Posts
 
 
 @app.route('/')
@@ -64,9 +64,28 @@ def logout():
     return redirect(url_for('login'))
 
 
-# profile page
 @app.route('/profile/<studentid>', methods=[])
 @login_required
 def profile(studentid):
     student = Students.query.filter_by(student_id=studentid).first_or_404()
     return render_template('profile.html', student=student)
+
+
+@app.route('/create_post', methods=['POST', 'GET'])
+@login_required
+def create_post():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+
+    post_form = PostForm()
+
+    if post_form.validate_on_submit():
+        post = Posts(post_title=post_form.post_title,
+                     message=post_form.post_body,
+                     poster_id=current_user.get_id())
+        db.session.add(post)
+        db.session.commit()
+        flash('Posting to dashboard.')
+        return render_template('post.html', post=post)
+    else:
+        return render_template('form_not_validated.html')

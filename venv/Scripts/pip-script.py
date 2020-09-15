@@ -1,4 +1,4 @@
-#!C:\Users\s3855825\Downloads\cosc2083_final_project-duc\cosc2083_final_project-duc\venv\Scripts\python.exe
+#!C:\Users\s3855825\Desktop\cosc2083_final_project\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==19.0.3','console_scripts','pip'
 __requires__ = 'pip==19.0.3'
 import re

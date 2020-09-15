@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from app.models import Students
 from app import db
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 
 
 class LoginForm(FlaskForm):
@@ -31,3 +31,9 @@ class RegisterForm(FlaskForm):
         # student = db.query(Students).filter_by(email=email.data).first()
         if student is not None:
             raise ValidationError("An account is already registered under this email.")
+
+
+class PostForm(FlaskForm):
+    post_title = StringField('Your Post Title', validators=[DataRequired()])
+    post_body = StringField(description='Content of your post', validators=[DataRequired(), Length(max=140)])
+    submit = SubmitField('Post')

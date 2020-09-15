@@ -1,4 +1,4 @@
-*{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -23,11 +23,19 @@
         <fieldset class="account-info">
           {{ form.student_id.label }} <br>
           {{ form.student_id }}
+
+          {% for error in form.student_id.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
         </fieldset>
 
         <fieldset class="account-info">
           {{ form.password_hash.label }} <br>
           {{ form.password_hash }}
+
+          {% for error in form.password_hash.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
         </fieldset>
 
         <fieldset  class="account-action">

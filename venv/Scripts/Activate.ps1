@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\s3855825\Downloads\cosc2083_final_project-duc\cosc2083_final_project-duc\venv"
+$env:VIRTUAL_ENV="C:\Users\s3855825\Desktop\cosc2083_final_project\venv"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

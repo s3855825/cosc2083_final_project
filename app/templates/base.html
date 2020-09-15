@@ -1,24 +1,24 @@
 <html>
     <head>
         {% if title %}
-        <title>{{ title }} - Groupmaker</title>
+        <title>{{ title }} - RMIT Student Network</title>
         {% else %}
-        <title>Groupmaker</title>
+        <title>RMIT Student Network</title>
         {% endif %}
     </head>
     <body>
-        <div>
-            Groupmaker:
-            <a href="{{ url_for('index') }}">Home</a>
+<!--        <div>-->
+<!--            Groupmaker:-->
+<!--            <a href="{{ url_for('index') }}">Home</a>-->
 
-            {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
-            {% else %}
-            <a href="{{ url_for('logout') }}">Logout</a>
-            {% endif %}
-        </div>
+<!--            {% if current_user.is_anonymous %}-->
+<!--            <a href="{{ url_for('login') }}">Login</a>-->
+<!--            {% else %}-->
+<!--            <a href="{{ url_for('logout') }}">Logout</a>-->
+<!--            {% endif %}-->
+<!--        </div>-->
 
-        <hr>
+<!--        <hr>-->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content% }
+{% block content %}
     <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}" />
     <form action method="post" style="border:1px solid #ccc">
 
@@ -54,4 +54,4 @@
 
         <p> {{ form.submit() }} </p>
     </form>
-{ %endblock% }
+{% endblock %}

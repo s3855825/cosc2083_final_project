@@ -31,7 +31,7 @@ class Students(UserMixin, db.Model):
     email = Column(String(20), nullable=False, unique=True)
     student_name = Column(String(20), nullable=False)
     password_hash = Column(String)
-    credit_score = Column(Float)
+    credit_score = Column(Float, default=100.0)
 
     def __init__(self, student_id, student_name, email):
         self.student_id = student_id
@@ -65,6 +65,7 @@ class WaitLists(db.Model):
 class Posts(db.Model):
     __tablename__ = "Posts"
     post_id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    post_title = Column(String(20), nullable=False)
     message = Column(String(140))
     waitlist_id = Column(Integer, ForeignKey('WaitLists.waitlist_id'), unique=True)
     poster_id = Column(String(7), ForeignKey('Students.student_id'), unique=True)
@@ -140,4 +141,15 @@ class Messages(db.Model):
     recipient_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
 
     def __repr__(self):
-        return '<User {}>'.format(self.username)
+        return '<Message from {} to {}, content: {}>'.format(self.sender_id, self.recipient_id, self.message)
+
+
+class Feedback(db.Model):
+    __tablename__ = "Feedback"
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    message = Column(String(140), nullable=False)
+    sender_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
+    recipient_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
+
+    def __repr__(self):
+        return '<Feedback from {} to {}, content {}>'.format(self.sender_id, self.recipient_id, self.message)
