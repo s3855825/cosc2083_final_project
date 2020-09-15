@@ -51,6 +51,11 @@ However, there are some distinctions about RSN’s features compared to mentione
 The most vital part of RSN is to create an appropriate academic environment for RMIT students to encourage their study and take full responsibility while working with their group mates. Whenever a student wants to post a request for joining a group, they have to fully provide  what their goal is (HD, DI for example) and their course code so that RSN can find results that nearly match the student’s requirements. However, the website also has its own function to avoid teammates who have bad attitudes or are lazy participating in the DI or HD groups just by looking back at their current credit point. 
 However, RSN is still a prototype and being tested frequently so there are some bugs that need to be fixed. Moreover, we all lack professional IT-related skills so there are some errors we can’t figure out how to solve right now. For instance, we got some trouble while working on github, specifically, at times we pushed our files on the wrong branch of other members. Secondly, we couldn’t find ways to connect our HTML files and make it work correctly or there are errors occurred when we use the CSS. In general, this prototype is just a clear example for the judges so that they can imagine how our project looks like and how it works.  
 
+Group Reflection
+Vinh:
+Mainly, my task in the team are writing report and support the other members’ ideas. After working with this group for nearly 12 weeks, I have seen many aspects from my teammates that amazed me. They do really know how to manage time right to finish the prototype of our project before the deadline even though none of us are proficient in IT fields. We just know some basic knowledge about creating a website such as HTML and programming skills and nothing more. However, by managing our time reasonably, we can still have some time for our self-study so as to improve our programming knowledge by using the outsource documents. Furthermore, owing to we all work in an harmony environment, we never feel stressed or negative feeling and argument between the members. Throughout this course, I’ve learnt not only IT knowledges, but also about teamwork and time managing and collaboration. It’s such a fortunate for me for having great teammates.
+
+
 
 
 
