@@ -1,33 +1,28 @@
 <html>
-    <head>
-        {% if title %}
-        <title>{{ title }} - RMIT Student Network</title>
-        {% else %}
-        <title>RMIT Student Network</title>
-        {% endif %}
-    </head>
-    <body>
-<!--        <div>-->
-<!--            Groupmaker:-->
-<!--            <a href="{{ url_for('index') }}">Home</a>-->
+<head>
+    {% if title %}
+    <title>{{ title }} - RMIT Student Network</title>
+    {% else %}
+    <title>RMIT Student Network</title>
+    {% endif %}
+</head>
+<body>
+<div>
+    RMIT Student Network:
+    <a href="{{ url_for('index') }}">Home</a>
 
-<!--            {% if current_user.is_anonymous %}-->
-<!--            <a href="{{ url_for('login') }}">Login</a>-->
-<!--            {% else %}-->
-<!--            <a href="{{ url_for('logout') }}">Logout</a>-->
-<!--            {% endif %}-->
-<!--        </div>-->
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a>
+    {% else %}
+    <a href="{{ url_for('profile', studentid=current_user.id) }}">Profile</a>
+    <a href="{{ url_for('create_post', studentid=current_user.id) }}">Create Post</a>
+    <a href="{{ url_for('dashboard', studentid=current_user.id) }}">Dashboard</a>
+    <a href="{{ url_for('group', studentid=current_user.id) }}">Group</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
 
-<!--        <hr>-->
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
-    </body>
+</div>
+
+{% block content %}{% endblock %}
+</body>
 </html>

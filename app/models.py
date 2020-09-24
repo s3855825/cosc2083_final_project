@@ -27,22 +27,24 @@ def load_student(student_id):
 # class Students(UserMixin, base):
 class Students(UserMixin, db.Model):
     __tablename__ = "Students"
-    student_id = Column(String(7), primary_key=True, nullable=False, unique=True)
+    id = Column(String(7), primary_key=True, nullable=False, unique=True)
     email = Column(String(20), nullable=False, unique=True)
     student_name = Column(String(20), nullable=False)
     password_hash = Column(String)
     credit_score = Column(Float, default=100.0)
 
+    posts = db.relationship('Posts', backref='author', lazy='dynamic')
+
     def __init__(self, student_id, student_name, email):
-        self.student_id = student_id
+        self.id = student_id
         self.student_name = student_name
         self.email = email
 
     def __repr__(self):
-        return '<Student {}, {}>'.format(self.student_id, self.student_name)
+        return '<Student {}, {}>'.format(self.id, self.student_name)
 
     def get_id(self):
-        return self.student_id
+        return self.id
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -54,30 +56,36 @@ class Students(UserMixin, db.Model):
 # class WaitLists(base):
 class WaitLists(db.Model):
     __tablename__ = "WaitLists"
-    waitlist_id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    student_id = Column(String(7), ForeignKey('Students.student_id'), unique=True)
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    student_id = Column(String(7), ForeignKey('Students.id'), unique=True)
 
     def __repr__(self):
-        return '<Wait list {}>'.format(self.waitlist_id)
+        return '<Wait list {}>'.format(self.id)
 
 
 # class Posts(base):
 class Posts(db.Model):
     __tablename__ = "Posts"
-    post_id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
     post_title = Column(String(20), nullable=False)
     message = Column(String(140))
-    waitlist_id = Column(Integer, ForeignKey('WaitLists.waitlist_id'), unique=True)
-    poster_id = Column(String(7), ForeignKey('Students.student_id'), unique=True)
+    waitlist_id = Column(Integer, ForeignKey('WaitLists.id'), unique=True, nullable=True)
+    poster_id = Column(String(7), ForeignKey('Students.id'), unique=True)
+
+    def __init__(self, post_title, message, poster_id):
+        # def __init__(self, message, poster_id):
+        self.post_title = post_title
+        self.message = message
+        self.post_id = poster_id
 
     def __repr__(self):
-        return '<Post {}, by {}, {}>'.format(self.post_id, self.poster_id, self.message[:50])
+        return '<Post titled {}, by {}, {}>'.format(self.post_title, self.poster_id, self.message[:50])
 
 
 # class Courses(base):
 class Courses(db.Model):
     __tablename__ = "Courses"
-    course_id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
     course_code = Column(String(8), unique=True, nullable=False)
     course_name = Column(String(20), unique=True)
 
@@ -89,8 +97,8 @@ class Courses(db.Model):
 class CoursesTaken(db.Model):
     __tablename__ = "CoursesTaken"
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    student_id = Column(String(7), ForeignKey('Students.student_id'))
-    course_id = Column(Integer, ForeignKey('Courses.course_id'))
+    student_id = Column(String(7), ForeignKey('Students.id'))
+    course_id = Column(Integer, ForeignKey('Courses.id'))
     semester = Column(String(10))
     gpa = Column(Float)
 
@@ -102,8 +110,8 @@ class CoursesTaken(db.Model):
 class Reviews(db.Model):
     __tablename__ = "Reviews"
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    student1_id = Column(String(7), ForeignKey('Students.student_id'), unique=True)
-    student2_id = Column(String(7), ForeignKey('Students.student_id'), unique=True)
+    student1_id = Column(String(7), ForeignKey('Students.id'), unique=True)
+    student2_id = Column(String(7), ForeignKey('Students.id'), unique=True)
     score = Column(Float)
 
     def __repr__(self):
@@ -113,19 +121,19 @@ class Reviews(db.Model):
 # class StudentGroups(base):
 class StudentGroups(db.Model):
     __tablename__ = "StudentGroups"
-    group_id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
     group_name = Column(String(10), unique=True, nullable=False)
 
     def __repr__(self):
-        return '<Group {}, name {}>'.format(self.group_id, self.group_name)
+        return '<Group {}, name {}>'.format(self.id, self.group_name)
 
 
 # class GroupMembers(base):
 class GroupMembers(db.Model):
     __tablename__ = "GroupMembers"
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    group_id = Column(Integer, ForeignKey('StudentGroups.group_id'))
-    student_id = Column(String(7), ForeignKey('Students.student_id'))
+    group_id = Column(Integer, ForeignKey('StudentGroups.id'))
+    student_id = Column(String(7), ForeignKey('Students.id'))
     member_role = Column(Enum(RoleEnum), nullable=False)
 
     def __repr__(self):
@@ -137,8 +145,8 @@ class Messages(db.Model):
     __tablename__ = "Messages"
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     message = Column(String(140), nullable=False)
-    sender_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
-    recipient_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
+    sender_id = Column(String(7), ForeignKey('Students.id'), nullable=False)
+    recipient_id = Column(String(7), ForeignKey('Students.id'), nullable=False)
 
     def __repr__(self):
         return '<Message from {} to {}, content: {}>'.format(self.sender_id, self.recipient_id, self.message)
@@ -148,8 +156,8 @@ class Feedback(db.Model):
     __tablename__ = "Feedback"
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     message = Column(String(140), nullable=False)
-    sender_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
-    recipient_id = Column(String(7), ForeignKey('Students.student_id'), nullable=False)
+    sender_id = Column(String(7), ForeignKey('Students.id'), nullable=False)
+    recipient_id = Column(String(7), ForeignKey('Students.id'), nullable=False)
 
     def __repr__(self):
         return '<Feedback from {} to {}, content {}>'.format(self.sender_id, self.recipient_id, self.message)

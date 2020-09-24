@@ -43,8 +43,8 @@ def login():
     login_form = LoginForm()
 
     if login_form.validate_on_submit():
-        print('form validated')
-        student_id = Students.query.filter_by(student_id=login_form.student_id.data).first()
+        # print('form validated')
+        student_id = Students.query.filter_by(id=login_form.student_id.data).first()
         # student_id = db.query(Students).filter_by(student_id=login_form.student_id.data).first()
         if student_id is None or not student_id.check_password(login_form.password_hash.data):
             flash('Invalid username or password')
@@ -64,28 +64,51 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/profile/<studentid>', methods=[])
+@app.route('/profile/<studentid>', methods=['POST', 'GET'])
 @login_required
 def profile(studentid):
-    student = Students.query.filter_by(student_id=studentid).first_or_404()
-    return render_template('profile.html', student=student)
+    student = Students.query.filter_by(id=studentid).first_or_404()
+    # posts = [
+    #     {'author': student, 'message': 'Test post #1'},
+    #     {'author': student, 'message': 'Test post #2'}
+    # ]
+    posts = Posts.query.all()
+    if not posts:
+        posts = [{'poster_id': '', 'post_title': 'No post made yet :<', 'message': ''}]
+    print(posts)
+    return render_template('profile.html', student=student, posts=posts)
+    # return render_template('profile.html', student=student)
 
 
 @app.route('/create_post', methods=['POST', 'GET'])
 @login_required
 def create_post():
     if not current_user.is_authenticated:
-        return redirect(url_for('login'))
+        return redirect(url_for('index'))
 
     post_form = PostForm()
 
     if post_form.validate_on_submit():
-        post = Posts(post_title=post_form.post_title,
-                     message=post_form.post_body,
-                     poster_id=current_user.get_id())
+        post = Posts(post_title=post_form.post_title.data,
+                     message=post_form.post_body.data,
+                     poster_id=current_user.id)
         db.session.add(post)
         db.session.commit()
-        flash('Posting to dashboard.')
-        return render_template('post.html', post=post)
-    else:
-        return render_template('form_not_validated.html')
+        return redirect(url_for('dashboard'))
+    return render_template('post.html', title='Create post', form=post_form)
+
+
+@app.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def dashboard():
+    posts = Posts.query.limit(5).all()
+    print(posts)
+    if not posts:
+        posts = [{'poster_id': 'Admin', 'message': 'No post made yet :<'}]
+    return render_template('dashboard.html', posts=posts)
+
+
+@app.route('/group', methods=['GET','POST'])
+@login_required
+def group():
+    return render_template('group')

@@ -3,13 +3,5 @@
 {% block content %}
     <a href="{{ url_for('index') }}">Home</a>
 
-    {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
-    {% else %}
-        <a href="{{ url_for('profile', studentid=current_user.student_id) }}">Profile</a>
-        <a href="{{ url_for('create_post', studentid=current_user.student_id) }}">Create Post</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-    {% endif %}
-
-    <h1>Welcome {{ current_user.student_name }}</h1>
+    <h1>Welcome {{ current_user.student_name}}, id {{ current_user.id }}</h1>
 {% endblock %}

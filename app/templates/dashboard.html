@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+{% for post in posts %}
+<div style="border: 1px black solid;">
+    <p><b>Poster: </b>{{ post.poster_id }}</p>
+    <p><b>Post title: </b>{{ post.poster_title }}</p>
+    <p><b>Message: </b>{{ post.message }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

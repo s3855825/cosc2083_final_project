@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 
-{% block content% }
+{% block content %}
+<div style="border: 1px solid black;">
+    <h1>Profile Page</h1><br>
+    <p> Student name: {{ student.student_name }} </p>
+    <p> Student ID: {{ student.id }} </p>
+    <p> Email: {{ student.email }} </p>
+    <p> Credit score: {{ student.credit_score }} </p>
+</div>
 
-    <h1>User: {{ user.username }}</h1><hr>
-
+<div style="border: 1px solid black;">
+    <p>My Posts: </p>
+    {% for post in posts %}
+    <p>
+        <b>{{ post.post_title }}</b> {{ post.message }}
+    </p>
+    {% endfor %}
+</div>
 {% endblock %}

@@ -1,25 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.post.label }}
-        <br>
-        {{ form.post(cols=32, rows=4) }}
-        <br>
 
-        {% for error in form.post.errors %}
+<form action="" method="post">
+    {{ form.csrf_token }}
+    <p>
+        {{ form.post_title.label }}<br>
+        {{ form.post_title }}<br>
+
+        {{ form.post_body.label }}<br>
+        {{ form.post_body(cols=32, rows=4) }}<br>
+
+        {% for error in form.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
     <p>{{ form.submit() }}</p>
 </form>
-
-{% for post in posts %}
-<p>
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
-</p>
-{% endfor %}
 
 {% endblock %}

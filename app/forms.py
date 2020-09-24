@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from app.models import Students
-from app import db
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+# from app import db
+from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 
 
@@ -21,7 +21,7 @@ class RegisterForm(FlaskForm):
     submit = SubmitField("Register")
 
     def validate_registration(self, student_id):
-        student = Students.query.filter_by(student_id=student_id.data).first()
+        student = Students.query.filter_by(id=student_id.data).first()
         # student = db.query(Students).filter_by(student_id=student_id.data).first()
         if student is not None:
             raise ValidationError("An account is already registered under this id.")
@@ -35,5 +35,5 @@ class RegisterForm(FlaskForm):
 
 class PostForm(FlaskForm):
     post_title = StringField('Your Post Title', validators=[DataRequired()])
-    post_body = StringField(description='Content of your post', validators=[DataRequired(), Length(max=140)])
+    post_body = TextAreaField(description='Content of your post', validators=[DataRequired(), Length(max=140)])
     submit = SubmitField('Post')
