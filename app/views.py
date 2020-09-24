@@ -4,7 +4,7 @@ from werkzeug.urls import url_parse
 
 from app.forms import LoginForm, RegisterForm, PostForm
 from app import app, db
-from app.models import Students, Posts
+from app.models import Students, Posts, StudentGroups
 
 
 @app.route('/')
@@ -105,10 +105,14 @@ def dashboard():
     print(posts)
     if not posts:
         posts = [{'poster_id': 'Admin', 'message': 'No post made yet :<'}]
-    return render_template('dashboard.html', posts=posts)
+    return render_template('dashboard.html', title='Dashboard', posts=posts)
 
 
 @app.route('/group', methods=['GET','POST'])
 @login_required
 def group():
-    return render_template('group')
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+
+    group = StudentGroups.query.filter_by()
+    return render_template('group.html', title='Group Page')
