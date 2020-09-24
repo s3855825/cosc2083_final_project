@@ -108,7 +108,7 @@ def dashboard():
     return render_template('dashboard.html', title='Dashboard', posts=posts)
 
 
-@app.route('/group', methods=['GET','POST'])
+@app.route('/group', methods=['GET', 'POST'])
 @login_required
 def group():
     if not current_user.is_authenticated:
