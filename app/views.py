@@ -25,6 +25,8 @@ def register():
 
     if register_form.validate_on_submit():
         # print('form validated')
+        if register_form.student_id.data[0] == 's':
+            register_form.student_id.data.rstrip('s')
         student = Students(student_id=register_form.student_id.data,
                            student_name=register_form.student_name.data,
                            email=register_form.email.data)
