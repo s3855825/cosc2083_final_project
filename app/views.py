@@ -72,7 +72,7 @@ def profile(studentid):
     #     {'author': student, 'message': 'Test post #1'},
     #     {'author': student, 'message': 'Test post #2'}
     # ]
-    posts = Posts.query.all()
+    posts = Posts.query.filter_by(poster_id=current_user.id).all()
     if not posts:
         posts = [{'poster_id': '', 'post_title': 'No post made yet :<', 'message': ''}]
     print(posts)
@@ -101,8 +101,7 @@ def create_post():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    posts = Posts.query.limit(5).all()
-    print(posts)
+    posts = Posts.query.all()
     if not posts:
         posts = [{'poster_id': 'Admin', 'message': 'No post made yet :<'}]
     return render_template('dashboard.html', title='Dashboard', posts=posts)

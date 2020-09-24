@@ -12,9 +12,11 @@
 <div style="border: 1px solid black;">
     <p>My Posts: </p>
     {% for post in posts %}
-    <p>
-        <b>{{ post.post_title }}</b> {{ post.message }}
-    </p>
+    <div style="border: 1px dotted black">
+        <p>
+            <b>{{ post.post_title }}</b> {{ post.message }}
+        </p>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
