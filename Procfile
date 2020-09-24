@@ -1,1 +1,1 @@
-web: gunicorn app: rmit-student-network
+web: gunicorn app: rmit-student-network run: app
