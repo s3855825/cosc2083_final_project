@@ -2,11 +2,16 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_socketio import SocketIO
+
 from app.config import Config
 
 
 app = Flask(__name__, template_folder='templates', static_folder='templates/assets')
 app.config.from_object(Config)
+
+socket = SocketIO()
+socket.init_app(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)

@@ -1,10 +1,12 @@
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, request, session
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
 from app.forms import LoginForm, RegisterForm, PostForm
 from app import app, db
 from app.models import Students, Posts, StudentGroups
+
+from .events import ROOM
 
 
 @app.route('/')
@@ -107,11 +109,15 @@ def dashboard():
     return render_template('dashboard.html', title='Dashboard', posts=posts)
 
 
-@app.route('/group', methods=['GET', 'POST'])
+@app.route('/chat', methods=['GET', 'POST'])
 @login_required
-def group():
+def chat():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
 
-    group = StudentGroups.query.filter_by()
-    return render_template('group.html', title='Group Page')
+    # name = session.get('name', '')
+    name = current_user.student_name
+    if name == '':
+        flash('Cannot find username')
+        return redirect(url_for('index'))
+    return render_template('chat.html', name=name, room=ROOM)
